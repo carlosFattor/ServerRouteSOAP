@@ -3,6 +3,7 @@ package br.com.ServerRouteSOAP.ws;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.jws.WebService;
 
 import br.com.ServerRouteSOAP.model.Aresta;
@@ -12,13 +13,11 @@ import br.com.ServerRouteSOAP.model.Vertice;
 @WebService(targetNamespace = "http://serverroutesoap.com.br/routeserverimpl/v1")
 public class RouteServerImpl implements RouteServer{
 
-	private Vertice vertice;
 
+	private Vertice vertice;
 	private RouteServerCB routeServerCB;
 
 	public RouteServerImpl() {
-		vertice = new Vertice();
-		routeServerCB = new RouteServerCB();
 		}
 
 	@Override
