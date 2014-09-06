@@ -1,7 +1,6 @@
 package br.com.ServerRouteSOAP.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,13 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-public class Vertice implements AbstractEntity, Comparable<Vertice>, Serializable {
+public class Vertice implements  AbstractEntity, Comparable<Vertice>, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private BigInteger id;
+	private Long id;
 	@Column
 	private String descricao;
 	@Column
@@ -37,13 +36,13 @@ public class Vertice implements AbstractEntity, Comparable<Vertice>, Serializabl
 		super();
 	}
 
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
 
 
 
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -151,5 +150,4 @@ public class Vertice implements AbstractEntity, Comparable<Vertice>, Serializabl
 		s += this.getDescricao();
 		return s;
 	}
-
 }
