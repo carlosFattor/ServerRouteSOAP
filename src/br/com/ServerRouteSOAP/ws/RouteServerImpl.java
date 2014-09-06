@@ -13,10 +13,12 @@ import br.com.ServerRouteSOAP.model.Vertice;
 public class RouteServerImpl implements RouteServer{
 
 	private Vertice vertice;
+
 	private RouteServerCB routeServerCB;
 
 	public RouteServerImpl() {
 		vertice = new Vertice();
+		routeServerCB = new RouteServerCB();
 		}
 
 	@Override
