@@ -1,5 +1,6 @@
 package br.com.ServerRouteSOAP.ws;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -15,13 +16,9 @@ public class RouteServerCB {
 
 	@Inject
 	private VerticeService daoVertice;
-	@Inject
 	private ArestaService daoAresta;
-	@Inject
 	private Aresta aresta;
-	@Inject
 	private Grafo grafo;
-	@Inject
 	private List<Vertice> menorCaminho;
 	private Dijkstra algDijkstra;
 	
@@ -63,6 +60,7 @@ public class RouteServerCB {
 	
 	private String calcMenorCaminho(Vertice origem, Vertice destino) {
 		algDijkstra = new Dijkstra();
+		menorCaminho = new ArrayList<Vertice>();
 		menorCaminho = algDijkstra.encontrarMenorCaminhoDijkstra(grafo, origem,
 				destino);
 		String resp = "";
@@ -83,6 +81,7 @@ public class RouteServerCB {
 	}
 
 	private void criaGrafo() {
+		grafo = new Grafo();
 		grafo.setVertices(this.listVertice());
 	}
 	

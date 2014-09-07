@@ -3,6 +3,7 @@ package br.com.ServerRouteSOAP.DAO;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -15,7 +16,7 @@ public abstract class GenericDAO<T extends AbstractEntity, PK extends Number> {
 	 * Classe da entidade, necessário para o método <code>EntityManager.find</code>.
 	 */
 	private Class<T> entityClass;
-
+	
 	public GenericDAO(Class<T> entityClass) {
 		this.entityClass = entityClass;
 	}

@@ -14,25 +14,24 @@ import br.com.ServerRouteSOAP.model.Vertice;
 public class VerticeServiceEJB extends GenericDAO<Vertice, Long> implements
 		VerticeService {
 
+	public VerticeServiceEJB(){
+		super(Vertice.class);
+	}
+	
 	public VerticeServiceEJB(Class<Vertice> entityClass) {
 		super(entityClass);
 	}
 
 	@PersistenceContext(unitName = "rotasPU")
 	private EntityManager em;
-
+	
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;
 	}
 
-	public VerticeServiceEJB() {
-		super(Vertice.class);
-	}
-
 	@Override
 	public Vertice find(BigInteger id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Vertice.class, id);
 	}
 }
