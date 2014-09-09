@@ -32,6 +32,6 @@ public class VerticeServiceEJB extends GenericDAO<Vertice, Long> implements
 
 	@Override
 	public Vertice find(BigInteger id) {
-		return em.find(Vertice.class, id);
+		return getEntityManager().find(Vertice.class, id);
 	}
 }

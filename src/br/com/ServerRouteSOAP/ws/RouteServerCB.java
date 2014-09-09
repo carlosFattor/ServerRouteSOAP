@@ -3,6 +3,7 @@ package br.com.ServerRouteSOAP.ws;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.com.ServerRouteSOAP.DAO.ArestaService;
@@ -12,6 +13,7 @@ import br.com.ServerRouteSOAP.model.Aresta;
 import br.com.ServerRouteSOAP.model.Grafo;
 import br.com.ServerRouteSOAP.model.Vertice;
 
+@Stateless
 public class RouteServerCB {
 
 	@Inject
